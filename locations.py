@@ -1,7 +1,5 @@
-# open files for saving SQL insert operations
 stations = open('insert_locations.txt', 'w+')
 
-# Numero, Nome, Diretor_Number
 stationsList = ["Lisboa", "Lisboa", "Entroncamento", "Santarém", "Caldas da Rainha", "Barreiro" , 
 "Setúbal" ,"Porto" , "Porto" , "Gaia" , "Ovar" , "Aveiro" , "Figueira da Foz" , "Coimbra" , "Pombal" , "Tomar" , 
 "Abrantes" , "Guarda" , "Covilhã" , "Castelo Branco" , "Elvas" , "Portalegre", "Évora" , "Beja" , "Ourique" , "Lagos" , "Portimão" , 

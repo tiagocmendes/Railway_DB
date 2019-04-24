@@ -1,4 +1,3 @@
-# open files for saving SQL insert operations
 stations = open('insert_tripZone.txt', 'w+')
 
 locList = ["Ribatejo", "Beira Litoral", "Beira Interior", "Alentejo", "Algarve", "Entre-Douro-e-Minho" , 
