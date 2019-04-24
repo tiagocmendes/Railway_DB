@@ -1,5 +1,3 @@
-import random
-
 # open files for saving SQL insert operations
 stations = open('insert_locations.txt', 'w+')
 

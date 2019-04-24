@@ -8,5 +8,4 @@ stationsList = ["Lisboa Oriente", "Lisboa Santa Apolónia", "Entroncamento", "Sa
 "Faro" , "Tavira" ,"Viana do Castelo" , "Braga" , "Guimarães" , "Régua" , "Vila Real" , "Mirandela" ]
 
 for i in range(len(stationsList)):
-    #print(str(i+1) + " " + stationsList[i])
-    stations.write("INSERT INTO RAILWAY.STATION VALUES ({}, '{}', {});\n".format(i+1, stationsList[i], i+3))
+    stations.write("INSERT INTO RAILWAY.STATION VALUES ({}, '{}', {});\n".format(i+1, stationsList[i], 11111))
