@@ -4,11 +4,11 @@ This repository holds the development of a Railway relational database, in order
 For this work, we used SQL Server for data definition and manipulation, and Python to generate the datasets to insert in the tables. We also used Visual Basic for the UI.
 
 # Entity-Relation Diagram 
-![Entity-Relation Diagram](ERDiagram.png)
+![Entity-Relation Diagram](./imgs/ERDiagram.png)
 **Figure 1** 
 
 # Relation Schema  
-![Relation Schema](RSchema.png)
+![Relation Schema](./imgs/RSchema.png)
 **Figure 2**
 
 ## Authors
