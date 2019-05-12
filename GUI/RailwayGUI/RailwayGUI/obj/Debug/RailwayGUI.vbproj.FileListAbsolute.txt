@@ -1,0 +1,13 @@
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\bin\Debug\RailwayGUI.exe.config
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\bin\Debug\RailwayGUI.exe
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\bin\Debug\RailwayGUI.pdb
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\bin\Debug\RailwayGUI.xml
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.vbprojAssemblyReference.cache
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.HomeForm.resources
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.Resources.resources
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.vbproj.GenerateResource.cache
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.vbproj.CoreCompileInputs.cache
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.exe
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.xml
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.pdb
+C:\Users\Tiago\Documents\Code\Railway_DB\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.Form2.resources
