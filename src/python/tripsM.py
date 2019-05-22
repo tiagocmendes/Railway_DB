@@ -34,10 +34,8 @@ for i in range(len(weekDays)):
 # 2a viagem
     file.write("INSERT INTO RAILWAY.TRIP VALUES ('{}', 'M',  '{}', '{}', 30, 31);\n".format(weekDays[i],Hp2, hp21))
     
-
     file.write("INSERT INTO RAILWAY.TRIP VALUES ('{}', 'M',  '{}', '{}', 31, 32);\n".format( weekDays[i],hp21,hp22 ))
     
-
     file.write("INSERT INTO RAILWAY.TRIP VALUES ('{}', 'M',  '{}', '{}', 32, 30);\n".format( weekDays[i],hp22, hp23))
     
 
@@ -47,7 +45,6 @@ for i in range(len(weekDays)):
 
     file.write("INSERT INTO RAILWAY.TRIP VALUES ('{}', 'M',  '{}', '{}', 31, 32);\n".format( weekDays[i],hp31,hp32 ))
     
-
     file.write("INSERT INTO RAILWAY.TRIP VALUES ('{}', 'M',  '{}', '{}', 32, 30);\n".format( weekDays[i],hp32, hp33))
     
 
