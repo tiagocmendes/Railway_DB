@@ -3,4 +3,5 @@
         Me.Hide()
         HomeForm.Show()
     End Sub
+
 End Class

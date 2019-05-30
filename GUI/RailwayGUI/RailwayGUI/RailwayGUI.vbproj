@@ -73,17 +73,47 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="HomePage.Designer.vb">
+      <DependentUpon>HomePage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="EditProfile.Designer.vb">
+      <DependentUpon>EditProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal.Designer.vb">
+      <DependentUpon>Modal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanTrip.Designer.vb">
+      <DependentUpon>PlanTrip.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanTrip.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.vb">
+      <DependentUpon>Profile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registo.Designer.vb">
+      <DependentUpon>Registo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -103,11 +133,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal.resx">
+      <DependentUpon>Modal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanTrip.resx">
+      <DependentUpon>PlanTrip.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registo.resx">
+      <DependentUpon>Registo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

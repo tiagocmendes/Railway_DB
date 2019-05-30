@@ -36,11 +36,11 @@ Partial Class HomeForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(264, 260)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 22)
+        Me.Label1.Size = New System.Drawing.Size(52, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Email:"
         '
@@ -57,11 +57,11 @@ Partial Class HomeForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(232, 293)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 22)
+        Me.Label2.Size = New System.Drawing.Size(82, 20)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Password:"
         '
@@ -80,7 +80,7 @@ Partial Class HomeForm
         '
         Me.Button2.BackColor = System.Drawing.Color.White
         Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.Font = New System.Drawing.Font("Montserrat Medium", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(147, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Button2.Location = New System.Drawing.Point(328, 332)
         Me.Button2.Name = "Button2"
@@ -92,7 +92,7 @@ Partial Class HomeForm
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Font = New System.Drawing.Font("Montserrat Medium", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(147, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Button1.Location = New System.Drawing.Point(429, 332)
         Me.Button1.Name = "Button1"
@@ -105,11 +105,11 @@ Partial Class HomeForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(515, 299)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(119, 16)
+        Me.Label3.Size = New System.Drawing.Size(105, 15)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Forgot password?"
         '
@@ -134,7 +134,7 @@ Partial Class HomeForm
         Me.MaximizeBox = False
         Me.Name = "HomeForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Railway | Home"
+        Me.Text = "Railway | Sign In"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
