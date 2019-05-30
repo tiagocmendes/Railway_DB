@@ -1,0 +1,16 @@
+INSERT INTO Railway.Locality VALUES ('Viana do Castelo',1);
+INSERT INTO Railway.Locality VALUES ('Braga',2);
+INSERT INTO Railway.Locality VALUES ('Guimarães',3);
+INSERT INTO Railway.Locality VALUES ('Porto',4);
+INSERT INTO Railway.Locality VALUES ('Porto',5);
+INSERT INTO Railway.Locality VALUES ('Vila Nova de Gaia',6);
+INSERT INTO Railway.Locality VALUES ('Ovar',7);
+INSERT INTO Railway.Locality VALUES ('Aveiro',8);
+INSERT INTO Railway.Locality VALUES ('Coimbra',9);
+INSERT INTO Railway.Locality VALUES ('Pombal',10);
+INSERT INTO Railway.Locality VALUES ('Figueira da Foz',11);
+INSERT INTO Railway.Locality VALUES ('Entroncamento',12);
+INSERT INTO Railway.Locality VALUES ('Santarém',13);
+INSERT INTO Railway.Locality VALUES ('Caldas da Rainha',14);
+INSERT INTO Railway.Locality VALUES ('Lisboa',15);
+INSERT INTO Railway.Locality VALUES ('Lisboa',16);

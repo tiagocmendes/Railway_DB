@@ -1,0 +1,16 @@
+UPDATE Railway.Station SET director_no = 101 WHERE station_no = 1;
+UPDATE Railway.Station SET director_no = 102 WHERE station_no = 2;
+UPDATE Railway.Station SET director_no = 103 WHERE station_no = 3;
+UPDATE Railway.Station SET director_no = 104 WHERE station_no = 4;
+UPDATE Railway.Station SET director_no = 105 WHERE station_no = 5;
+UPDATE Railway.Station SET director_no = 106 WHERE station_no = 6;
+UPDATE Railway.Station SET director_no = 107 WHERE station_no = 7;
+UPDATE Railway.Station SET director_no = 108 WHERE station_no = 8;
+UPDATE Railway.Station SET director_no = 109 WHERE station_no = 9;
+UPDATE Railway.Station SET director_no = 110 WHERE station_no = 10;
+UPDATE Railway.Station SET director_no = 111 WHERE station_no = 11;
+UPDATE Railway.Station SET director_no = 112 WHERE station_no = 12;
+UPDATE Railway.Station SET director_no = 113 WHERE station_no = 13;
+UPDATE Railway.Station SET director_no = 114 WHERE station_no = 14;
+UPDATE Railway.Station SET director_no = 115 WHERE station_no = 15;
+UPDATE Railway.Station SET director_no = 116 WHERE station_no = 16;

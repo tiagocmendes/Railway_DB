@@ -1,0 +1,16 @@
+INSERT INTO Railway.Station VALUES ('Viana do Castelo',1);
+INSERT INTO Railway.Station VALUES ('Braga',1);
+INSERT INTO Railway.Station VALUES ('Guimarães',1);
+INSERT INTO Railway.Station VALUES ('Porto - São Bento',2);
+INSERT INTO Railway.Station VALUES ('Porto - Campanhã',2);
+INSERT INTO Railway.Station VALUES ('Vila Nova de Gaia',2);
+INSERT INTO Railway.Station VALUES ('Ovar',2);
+INSERT INTO Railway.Station VALUES ('Aveiro',2);
+INSERT INTO Railway.Station VALUES ('Coimbra',2);
+INSERT INTO Railway.Station VALUES ('Pombal',2);
+INSERT INTO Railway.Station VALUES ('Figueira da Foz',2);
+INSERT INTO Railway.Station VALUES ('Entroncamento',3);
+INSERT INTO Railway.Station VALUES ('Santarém',3);
+INSERT INTO Railway.Station VALUES ('Caldas da Rainha',3);
+INSERT INTO Railway.Station VALUES ('Lisboa - Santa Apolónia',3);
+INSERT INTO Railway.Station VALUES ('Lisboa - Oriente',3);
