@@ -29,3 +29,6 @@ C:\Users\tomas\Desktop\UA\RailWay_DataBase\GUI\RailwayGUI\RailwayGUI\obj\Debug\R
 C:\Users\tomas\Desktop\UA\RailWay_DataBase\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.Profile.resources
 C:\Users\tomas\Desktop\UA\RailWay_DataBase\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.Modal.resources
 C:\Users\tomas\Desktop\UA\RailWay_DataBase\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.PlanTrip.resources
+C:\Users\tomas\Desktop\UA\RailWay_DataBase\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.DetailedTrip.resources
+C:\Users\tomas\Desktop\UA\RailWay_DataBase\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.DisplaySearch.resources
+C:\Users\tomas\Desktop\UA\RailWay_DataBase\GUI\RailwayGUI\RailwayGUI\obj\Debug\RailwayGUI.SearchStation.resources

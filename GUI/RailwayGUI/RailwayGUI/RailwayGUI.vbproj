@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -73,6 +74,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetailedTrip.Designer.vb">
+      <DependentUpon>DetailedTrip.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DetailedTrip.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplaySearch.Designer.vb">
+      <DependentUpon>DisplaySearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DisplaySearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HomePage.Designer.vb">
       <DependentUpon>HomePage.vb</DependentUpon>
     </Compile>
@@ -131,8 +144,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SearchStation.Designer.vb">
+      <DependentUpon>SearchStation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SearchStation.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DetailedTrip.resx">
+      <DependentUpon>DetailedTrip.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplaySearch.resx">
+      <DependentUpon>DisplaySearch.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.vb</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +184,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchStation.resx">
+      <DependentUpon>SearchStation.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +215,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\underground.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\loupe_normal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
