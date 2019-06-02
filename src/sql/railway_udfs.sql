@@ -1,7 +1,8 @@
 USE p6g10;
 GO
 
-ALTER FUNCTION Railway.check_login (@email VARCHAR(50)) RETURNS INT
+-- Login functions
+ALTER FUNCTION Railway.f_check_login (@email VARCHAR(50)) RETURNS INT
 AS
 BEGIN
 	IF EXISTS(SELECT * FROM Railway.Passenger AS p WHERE p.email = @email)
@@ -10,7 +11,7 @@ BEGIN
 END
 GO
 
-ALTER FUNCTION Railway.check_password (@email VARCHAR(50), @password VARCHAR(50)) RETURNS INT
+ALTER FUNCTION Railway.f_check_password (@email VARCHAR(50), @password VARCHAR(50)) RETURNS INT
 AS
 BEGIN
 	IF EXISTS(SELECT * FROM Railway.Passenger AS p WHERE p.email = @email AND p.pw = HASHBYTES('SHA1',@password))
@@ -19,17 +20,21 @@ BEGIN
 END 
 GO
 
-
-ALTER FUNCTION Railway.return_login (@email VARCHAR(50), @password VARCHAR(50)) RETURNS Table
+ALTER FUNCTION Railway.f_return_login (@email VARCHAR(50), @password VARCHAR(50)) RETURNS Table
 AS
-	RETURN (SELECT * FROM Railway.Person AS person JOIN Railway.Passenger As passenger ON person.id = passenger.passenger_id + 1
+	RETURN (SELECT * FROM Railway.Person AS person JOIN Railway.Passenger As passenger ON person.id = passenger.passenger_id
 		WHERE passenger.email = @email AND passenger.pw = HASHBYTES('SHA1', @password))
 GO
 
-
---SELECT Railway.check_login ('daenerys_sim�aes@ua.pt');
---SELECT Railway.check_password ('daenerys_sim�es@ua.pt','9N7OhqtvPA39GVx0J05fi');
---select * from Railway.return_login ('daenerys_sim�es@ua.pt','9N7OhqtvPA39GVx0J05fi');
+-- Sign up functions
+ALTER FUNCTION Railway.f_check_nif(@nif INT) RETURNS INT
+AS
+BEGIN
+	IF EXISTS(SELECT * FROM Railway.Person AS p WHERE p.nif = @nif)
+		RETURN 1;
+	RETURN 0;
+END
+GO
 
 /*
 ALTER FUNCTION Railway.trip_price (@dep_station INT, @arr_station INT) RETURNS SMALLMONEY
