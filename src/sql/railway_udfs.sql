@@ -36,38 +36,33 @@ BEGIN
 END
 GO
 
-/*
-ALTER FUNCTION Railway.trip_price (@dep_station INT, @arr_station INT) RETURNS SMALLMONEY
+
+ALTER FUNCTION Railway.trip_price (@trip_type VARCHAR(2), @dep_station INT, @arr_station INT) RETURNS SMALLMONEY
 AS
-	BEGIN
-		
-		DECLARE @dep_zone		AS INT;
-		DECLARE @arr_zone		AS INT;
-		DECLARE @trip_type		AS VARCHAR(2);
+BEGIN
+	DECLARE @dep_zone AS INT;
+	DECLARE @arr_zone AS INT;
 
-		SELECT 
-		@trip_type = trip.trip_type, 
-		@dep_zone = dstation.zone_no, 
-		@arr_zone = astation.zone_no
+	SELECT DISTINCT
+		@dep_zone = dep.zone_no,
+		@arr_zone = arr.zone_no 
 		FROM Railway.Trip AS trip 
-		JOIN Railway.Station AS dstation ON trip.dep_station = dstation.station_no
-		JOIN Railway.Station AS astation ON trip.arr_station = astation.station_no
-		WHERE dstation.station_no = @dep_station AND astation.station_no = @arr_station;
+		JOIN Railway.Station AS dep ON trip.dep_station = dep.station_no
+		JOIN Railway.Station AS arr ON trip.arr_station = arr.station_no
+		WHERE trip.trip_type = @trip_type AND dep.station_no = @dep_station AND arr.station_no = @arr_station;
 
-		
+	IF (@arr_zone < @dep_zone)
+		BEGIN
+			DECLARE @aux AS INT;
+			SET @aux = @arr_zone;
+			SET @arr_zone = @dep_zone;
+			SET @dep_zone = @aux;
+		END
 
-		IF (@arr_zone < @dep_zone)
-			BEGIN
-				DECLARE @aux	AS INT;
-				SET @aux = @arr_zone;
-				SET @arr_zone = @dep_zone;
-				SET @dep_zone = @aux;
-			END
-
-		DECLARE @price			AS SMALLMONEY;
+		DECLARE @price AS SMALLMONEY;
 		SET @price = 0;
 
-		DECLARE @loop_cnt INT = @dep_zone; 
+		DECLARE @loop_cnt INT = @dep_zone;
 		WHILE @loop_cnt <= @arr_zone
 		BEGIN
 			IF (@trip_type = 'UR')
@@ -90,15 +85,10 @@ AS
 				END
 		
 			SET @loop_cnt = @loop_cnt + 1;
-		END;
-
-		IF (@trip_type = 'UR')
-			SELECT @price = (@price + priceUR)
-			FROM Railway.TripZone
-			WHERE zone_no = @arr_zone;
-
+		END
 		RETURN @price;
-		
-	END
+END
 GO
-*/
+
+SELECT Railway.trip_price ('AP',16,1);
+
