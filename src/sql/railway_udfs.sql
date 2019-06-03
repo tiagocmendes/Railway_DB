@@ -37,7 +37,7 @@ END
 GO
 
 
-ALTER FUNCTION Railway.trip_price (@trip_type VARCHAR(2), @dep_station INT, @arr_station INT) RETURNS SMALLMONEY
+ALTER FUNCTION Railway.trip_price (@trip_type VARCHAR(2), @dep_station VARCHAR(30), @arr_station VARCHAR(30)) RETURNS SMALLMONEY
 AS
 BEGIN
 	DECLARE @dep_zone AS INT;
@@ -49,7 +49,7 @@ BEGIN
 		FROM Railway.Trip AS trip 
 		JOIN Railway.Station AS dep ON trip.dep_station = dep.station_no
 		JOIN Railway.Station AS arr ON trip.arr_station = arr.station_no
-		WHERE trip.trip_type = @trip_type AND dep.station_no = @dep_station AND arr.station_no = @arr_station;
+		WHERE trip.trip_type = @trip_type AND dep.station_name = @dep_station AND arr.station_name = @arr_station;
 
 	IF (@arr_zone < @dep_zone)
 		BEGIN
@@ -90,5 +90,38 @@ BEGIN
 END
 GO
 
-SELECT Railway.trip_price ('AP',16,1);
+ALTER FUNCTION Railway.f_get_trips(@dep_station_name VARCHAR(30), @arr_station_name VARCHAR(30)) RETURNS @table TABLE 
+(trip_no INT, trip_type	VARCHAR(2), dep_timestamp TIME, arr_timestamp TIME, duration TIME, price SMALLMONEY)
+AS
+	BEGIN
+		DECLARE @dep_station AS INT;
+		DECLARE @arr_station AS INT;
+		INSERT @table (t.trip_no, t.trip_type, t.dep_timestamp, t.arr_timestamp, t.duration)
+			SELECT t.trip_no, t.trip_type, t.dep_timestamp, t.arr_timestamp, t.duration
+			FROM Railway.Trip AS t JOIN Railway.Station AS dep_station ON t.dep_station = dep_station.station_no
+			JOIN Railway.Station AS arr_station ON t.arr_station = arr_station.station_no
+			WHERE dep_station.station_name = @dep_station_name AND arr_station.station_name = @arr_station_name AND t.trip_type <> 'M';
+
+		DECLARE @hello as int;
+		DECLARE @tripType AS VARCHAR(2);
+		DECLARE C CURSOR FAST_FORWARD
+		FOR SELECT trip_type FROM @table
+
+		OPEN C;
+		
+		WHILE @@FETCH_STATUS = 0
+			BEGIN
+				UPDATE @table SET price = (SELECT Railway.trip_price(@tripType, @dep_station_name, @arr_station_name)) WHERE trip_type = @tripType;
+				FETCH C INTO @tripType;
+			END
+		CLOSE C ;
+		DEALLOCATE C;
+
+		RETURN;
+	END;
+GO
+
+
+SELECT * FROM Railway.f_get_trips('Viana do Castelo', 'Porto - São Bento');
+
 

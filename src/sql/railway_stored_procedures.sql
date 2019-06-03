@@ -32,4 +32,10 @@ AS
 	INSERT INTO Railway.Passenger VALUES (@passenger_id, @email, HASHBYTES('SHA1', @pw));
 GO
 
+ALTER PROC Railway.pr_get_stations
+AS
+	SELECT station_name FROM Railway.Station;
+GO
+
 --exec Railway.pr_sign_up 'Tiago', 'Mendes', '1999-01-17', 123456789, 'M', '3515', 'Viseu', 'Portugal',966035286,'tiagocmendes@ua.pt', 'ola';
+-- exec Railway.pr_get_stations;
