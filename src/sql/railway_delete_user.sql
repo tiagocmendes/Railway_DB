@@ -7,4 +7,3 @@ BEGIN
 	DELETE FROM Railway.Person WHERE id = @user_id;
 END
 GO
-
