@@ -1,5 +1,3 @@
--- Tem de checkar id do atual user
---	
 USE p6g10;
 GO
 
@@ -18,32 +16,29 @@ ALTER PROC Railway.pr_edit_profile	@email VARCHAR(50),
 AS
 BEGIN
 	-- Change fname
-	IF (@fname <> NULL)
+	IF NOT (@fname LIKE '%NULL%')
 		UPDATE Railway.Person SET fname = @fname WHERE nif = @nif;
 	-- Change lname
-	IF (@lname <> NULL)
+	IF NOT (@lname LIKE '%NULL%')
 		UPDATE Railway.Person SET lname = @lname WHERE nif = @nif;
-	-- Change bdate
-	--IF (@bdate <> NULL)
-	--	UPDATE Railway.Person SET fname = @bdate WHERE nif = @nif;
 	-- Change gender
-	IF (@gender <> NULL)
+	IF NOT (@gender LIKE '%N%')
 		UPDATE Railway.Person SET gender = @gender WHERE nif = @nif;
 	-- Change postal code
-	IF (@postal_code <> NULL)
+	IF NOT (@postal_code LIKE '%NULL%')
 		UPDATE Railway.Person SET postal_code = @postal_code WHERE nif = @nif;
 	-- Change city
-	IF (@city <> NULL)
+	IF NOT (@city LIKE '%NULL%')
 		UPDATE Railway.Person SET city = @city WHERE nif = @nif;
 	-- Change country
-	IF (@country <> NULL)
+	IF NOT (@country LIKE '%NULL%')
 		UPDATE Railway.Person SET country = @country WHERE nif = @nif;
 	-- Change phone
-	IF (@phone <> NULL)
+	IF NOT (@phone = 0)
 		UPDATE Railway.Person SET phone = @phone WHERE nif = @nif;
 	-- Change password
-	IF (@new_password  <> NULL)
-		UPDATE Railway.Passenger SET pw = @new_password  WHERE email = @email;
+	IF NOT (@new_password LIKE '%NULL%')
+		UPDATE Railway.Passenger SET pw = HASHBYTES('SHA1', @new_password) WHERE email = @email;
 END
 GO
 
