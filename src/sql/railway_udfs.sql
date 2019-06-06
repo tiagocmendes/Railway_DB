@@ -122,6 +122,39 @@ AS
 GO
 
 
-SELECT * FROM Railway.f_get_trips('Viana do Castelo', 'Porto - São Bento');
+ALTER FUNCTION Railway.f_insert_trip_instance(@trip_no INT, @trip_date DATE) RETURNS INT
+AS
+BEGIN
+	IF NOT EXISTS(SELECT * FROM Railway.TripInstance AS ti WHERE ti.trip_no = @trip_no AND ti.trip_date = trip_date)
+		RETURN 1;
+	RETURN 0;
+END
+GO
+
+ALTER FUNCTION Railway.f_check_discount(@promocode VARCHAR(10)) RETURNS INT
+AS
+BEGIN
+	IF EXISTS(SELECT * FROM Railway.Discount WHERE promocode = @promocode)
+		RETURN 1;
+	RETURN 0;
+END
+GO
+
+ALTER FUNCTION Railway.f_check_profile_picture(@passenger_id INT) RETURNS INT
+AS
+BEGIN
+	IF EXISTS(SELECT * FROM Railway.ProfilePictures WHERE passenger_id = @passenger_id)
+		RETURN 1;
+	RETURN 0;
+END
+GO
+
+CREATE FUNCTION  Railway.f_insert_image(@passenger_id INT, @img_base64 VARCHAR(MAX))
+AS
+BEGIN
+	UPDATE Railway.ProfilePictures SET img_base64 = @img_base64 WHERE passenger_id = @passenger_id;
+END
+GO
+
 
 

@@ -1,7 +1,7 @@
 USE p6g10;
 GO
 
-CREATE TRIGGER Railway.InsertTripTrigger ON Railway.Trip
+ALTER TRIGGER Railway.InsertTripTrigger ON Railway.Trip
 INSTEAD OF INSERT
 AS
 	BEGIN 

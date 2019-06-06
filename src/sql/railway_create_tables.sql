@@ -41,8 +41,8 @@ CREATE TABLE Railway.Ticket (
 	nif					INT			NOT NULL	CHECK(nif >= 100000000 AND nif < 999999999),
 	dep_station			INT			NOT	NULL	CHECK(dep_station > 0),
 	arr_station			INT			NOT	NULL	CHECK(arr_station > 0),
-	dep_timestamp		DATETIME	NOT	NULL,
-	arr_timestamp		DATETIME	NOT	NULL,
+	dep_timestamp		TIME		NOT	NULL,
+	arr_timestamp		TIME		NOT	NULL,
 	train_no			INT			NOT	NULL	CHECK(train_no > 0),
 	carriage_no			INT			NOT	NULL	CHECK(carriage_no > 0),
 	seat_no				INT			NOT NULL	CHECK(seat_no > 0),
@@ -221,3 +221,15 @@ FOREIGN KEY (arr_station) REFERENCES Railway.Station(station_no);
 ALTER TABLE Railway.Station
 ADD CONSTRAINT c20
 FOREIGN KEY (zone_no) REFERENCES Railway.TripZone(zone_no);
+
+CREATE TABLE Railway.ProfilePictures (
+	id				INT			IDENTITY(1,1),
+	img_base64		VARCHAR(MAX),
+	passenger_id	INT,
+	PRIMARY KEY (id)
+);
+
+ALTER TABLE Railway.ProfilePictures
+ADD CONSTRAINT c21
+FOREIGN KEY (passenger_id) REFERENCES Railway.Passenger;
+
