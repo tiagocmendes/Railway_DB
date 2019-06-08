@@ -121,3 +121,76 @@ AS
 		INSERT INTO Railway.ProfilePictures VALUES (@img_base64, @passenger_id);
 GO
 
+ALTER PROC Railway.pr_delete_profile (	@user_id INT,
+										@nif INT)
+AS
+BEGIN
+	DELETE FROM Railway.Ticket WHERE nif = @nif;
+	DELETE FROM Railway.Passenger WHERE passenger_id = @user_id;
+	DELETE FROM Railway.Person WHERE id = @user_id;
+END
+GO
+
+ALTER PROC Railway.pr_edit_profile	@email VARCHAR(50), 
+									@nif INT, 
+									@fname VARCHAR(30), 
+									@lname VARCHAR(30), 
+									--@bdate DATE, 
+									@gender CHAR, 
+									@postal_code VARCHAR(50), 
+									@city VARCHAR(50), 
+									@country VARCHAR(50), 
+									@phone INT,
+									@new_password VARCHAR(50)
+AS
+BEGIN
+	-- Change fname
+	IF NOT (@fname LIKE 'NULL')
+		UPDATE Railway.Person SET fname = @fname WHERE nif = @nif;
+	-- Change lname
+	IF NOT (@lname LIKE 'NULL')
+		UPDATE Railway.Person SET lname = @lname WHERE nif = @nif;
+	-- Change gender
+	IF NOT (@gender LIKE 'N')
+		UPDATE Railway.Person SET gender = @gender WHERE nif = @nif;
+	-- Change postal code
+	IF NOT (@postal_code LIKE 'NULL')
+		UPDATE Railway.Person SET postal_code = @postal_code WHERE nif = @nif;
+	-- Change city
+	IF NOT (@city LIKE 'NULL')
+		UPDATE Railway.Person SET city = @city WHERE nif = @nif;
+	-- Change country
+	IF NOT (@country LIKE 'NULL')
+		UPDATE Railway.Person SET country = @country WHERE nif = @nif;
+	-- Change phone
+	IF NOT (@phone = 0)
+		UPDATE Railway.Person SET phone = @phone WHERE nif = @nif;
+	-- Change password
+	IF NOT (@new_password LIKE 'NULL')
+		UPDATE Railway.Passenger SET pw = HASHBYTES('SHA1', @new_password) WHERE email = @email;
+END
+GO
+
+ALTER PROC Railway.pr_forgot_password (@email VARCHAR(50),
+										@password VARCHAR(50))
+AS
+BEGIN
+	UPDATE Railway.Passenger SET email = @email WHERE email = @email;
+	UPDATE Railway.Passenger SET pw = HASHBYTES('SHA1', @password) WHERE email = @email;
+END
+GO
+
+ALTER PROC Railway.pr_search_station (@station_name VARCHAR(50))
+AS
+BEGIN
+	SELECT  tz.zone_no, tz.zone_name, st.station_name, l.locality_name, p.fname, p.lname FROM Railway.Station as st 
+	JOIN Railway.TripZone AS tz ON st.zone_no = tz.zone_no
+	JOIN Railway.Locality AS l ON st.station_no = l.station_no
+	JOIN Railway.Employee AS emp ON st.director_no = emp.emp_no
+	JOIN Railway.Person AS p ON emp.emp_id = p.id
+	WHERE station_name LIKE CONCAT('%', @station_name, '%');
+END
+GO
+
+
+
